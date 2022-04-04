@@ -1,14 +1,17 @@
 from tkinter import *
 import pyshorteners as ps
 
-# button change colour when coursor on it
-def button_hover(event):
-    button["bg"] = "lightblue"
 
 # button defoult colour
 def button_hover_leave(event):
     button["bg"] = "SystemButtonFace"
 
+    
+# button change colour when coursor on it
+def button_hover(event):
+    button["bg"] = "lightblue"
+
+    
 # creating object, and URL convert to shortURL
 def short():
     obj = ps.Shortener()
@@ -21,8 +24,10 @@ def short():
         text = "Incorrect URL address"
         output.insert(END, text)
 
+        
 if __name__ == "__main__":
 
+    
     window = Tk()
     window.geometry("400x240")
     window.title("URL shortener")
@@ -43,7 +48,5 @@ if __name__ == "__main__":
 
     exit = Button(text="Quit",width=10, command=window.destroy)
     exit.place(x=20, y=200)
-
-    made_by = Label(text="made by @python3_fun").place(x = 260, y = 208)
 
     window.mainloop()
